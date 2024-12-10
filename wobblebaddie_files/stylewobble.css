@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* Please ❤ this if you like it! 😊 */
+/* Reset Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Oswald", sans-serif;
+  /* Background image path */
+  background: url('ContactSheet-001.jpg') no-repeat center center;
+  background-size: cover;
+  transform-style: preserve-3d;
+  transform: perspective(500px);
+  transition: all linear 0.5s;
+  overflow-x: hidden;
+}
+
+/* Main Text Style */
+.text__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: perspective(800px) rotateX(-20deg);
+}
+.text__content {
+  position: absolute;
+  font-size: clamp(3rem, 10vw, 12rem);
+  font-weight: 700;
+  letter-spacing: -0.14em;
+}
+.text__content span {
+  display: inline-block;
+  color: #f0f0f0;
+  -webkit-text-stroke: 0.025em #020202;
+  transform-origin: center bottom;
+  vertical-align: middle;
+}
+.text__content:nth-child(2n) span {
+  -webkit-animation: even 3s cubic-bezier(0.87, 0, 0.13, 1) infinite;
+  animation: even 3s cubic-bezier(0.87, 0, 0.13, 1) infinite;
+}
+.text__content:nth-child(2n+1) span {
+  -webkit-animation: odd 3s cubic-bezier(0.87, 0, 0.13, 1) infinite;
+  animation: odd 3s cubic-bezier(0.87, 0, 0.13, 1) infinite;
+}
+.text__content:nth-child(1) {
+  transform: translate3d(0, 0, -15px);
+}
+/* Repeat transform styles for other text content as needed, e.g., nth-child(2), nth-child(3), etc. */
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Keep everything centered */
+}
+
+.underconstruction {
+  position: relative;
+  margin-top: 8rem; /* Space between wobble text and "Underconstruction" text */
+  font-size: 1.5rem; /* Slightly smaller font size */
+  font-weight: bold;
+  color: #020202; /* Text color */
+  text-align: center; /* Centered text */
+}
+
+.pikachu-gif {
+  margin-top: 2rem; /* Add space between text and GIF */
+  width: 150px; /* Adjust size if needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Text Move Animation */
+@-webkit-keyframes even {
+  100%, 0% {
+    transform: rotate(-35deg);
+  }
+  50% {
+    transform: rotate(35deg);
+  }
+}
+@keyframes even {
+  100%, 0% {
+    transform: rotate(-35deg);
+  }
+  50% {
+    transform: rotate(35deg);
+  }
+}
+@-webkit-keyframes odd {
+  100%, 0% {
+    transform: rotate(35deg);
+  }
+  50% {
+    transform: rotate(-35deg);
+  }
+}
+@keyframes odd {
+  100%, 0% {
+    transform: rotate(35deg);
+  }
+  50% {
+    transform: rotate(-35deg);
+  }
+}
